@@ -1,0 +1,7 @@
+<!-- ***para deixar semantico o conteúdo, pode ser usado o*** 
+     - header (cabeçalho), 
+     - section (para ex.: formulario), se dentro de sections se precisar de + secões posso usar divs (genéricos).
+     - No caso usamos a div de doares, dentro dela div doador + div tipo de sangue
+     - main (conteudo central),
+     - footer (rodapé)-->
+    <!--Input - entrada de texto (usamos para receber dados em formulário| Output - Saida (tudo que você esta vendo.)-->
