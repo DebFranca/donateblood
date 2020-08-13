@@ -1,7 +1,66 @@
-<!-- ***para deixar semantico o conteúdo, pode ser usado o*** 
+<!-- comentários html -->
+
+***para deixar semantico o conteúdo, pode ser usado o*** 
      - header (cabeçalho), 
      - section (para ex.: formulario), se dentro de sections se precisar de + secões posso usar divs (genéricos).
      - No caso usamos a div de doares, dentro dela div doador + div tipo de sangue
      - main (conteudo central),
      - footer (rodapé)-->
-    <!--Input - entrada de texto (usamos para receber dados em formulário| Output - Saida (tudo que você esta vendo.)-->
+ Input - entrada de texto (usamos para receber dados em formulário| Output - Saida (tudo que você esta vendo.)-->
+
+--------------------------------------------------------------
+/* comentários css */
+
+ALINHAMENTO DE TEXTO:
+
+--> text-align: center
+
+--> a propriedade *display é a maneira de como o css vai mostrar elementos na página.
+temos: flex, inline, block, grid. 
+
+* --> grid é a maneira mult-dimensional, vai aparecer as colunas, em linhas, é como 
+se eu estivesse fatiando como uma tabela do excel.
+***Grid-template-columns: define a qtd de colunas, mas preciso tb informar a largura da coluna, então se quero 4 colunas, ficaria: 20px 20px 20px 20px, ou pra ser mais flexivel e ocupar melhor o espaço faça: 1fr 1fr 1 fr 1fr e posso usar o grid-gap para dar um espaço entre as colunas
+***Grid-template-rows: define qtd de linhas
+***Grid-template-areas:
+
+* --> flex, diferente do grid, eu devo escolher entre linhas e colunas, que por padrão vai deixar tudo em linha, mas posso 
+junto com display: flex usar o
+--> flex-direction: column;
+
+----------------------------------------------------------------
+ALINHAMENTO DE ITENS
+
+--> align-items: center, movendo o item imaginando um eixo y, mas movendo até ficar alinhado ao eixo x.
+
+
+----------------------------------------------------------
+
+ESPAÇAMENTOS:
+
+--> margin, zere os espaçamentos de margin do html, deixe na primeira linha da folha css: html, body {margin: 0;}
+--> padding: é nosso espaçamento interno.
+--> box-sizing: border-box, use para que seja respeitada a largura, pois do contrario, será somada com o padding. 
+*{
+    box-sizing: border-box;
+}
+
+
+------------------------------------------------------------------
+
+LARGURAS E ALTURAS
+
+--> width/largura: para limitar os elementos na página, pode ser usados com px, %. Então se eu coloco a 90%
+ele vai ocupar 90% a partir da minha esquerda, 
+
+mas se a tela for grande vai ficar estranho, então limito mais ainda colocando o: 
+--> max-widht: 500px, por exemplo, então vai esticar até chegar 500px. 
+
+para centralizar posso usar:
+--> margin-left: auto e margin-right: auto
+
+--> resumindo: margin: 0 auto 70px; (top:0 esq/dir: auto bottom: 70px)
+
+* --> A ALTURA
+
+no body vamos deixar: height: 100vh; (100% do view heigth do body)
