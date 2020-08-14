@@ -22,6 +22,15 @@ h1, h2{
 header h1, main h2{
     margin-bottom: 70px;
 }
+.logo{
+    width: 120px;
+    margin: 70px 0;
+}
+
+header p{
+    font-size: 14px;
+
+}
 
 main h2 span{
     color:#ff4f4f;
@@ -89,6 +98,36 @@ header, .form, main{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
+}
+
+.blood{
+    color:#ff4f4f;
+    font-weight: bold;
+    font: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+/*criando uma gota para por o tipo sanguineo dentro*/
+.blood::before{
+    content: "";
+    background-color: #ff4f4f11;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+
+    /*  */
+    border-radius: 50%;
+    border-top-right-radius: 0;
+    transform: rotate(-45deg);
+}
+
+.donors p{
+    margin-top: 24px;
+    font-size: 14px;
 }
 
 footer{

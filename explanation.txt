@@ -64,3 +64,14 @@ para centralizar posso usar:
 * --> A ALTURA
 
 no body vamos deixar: height: 100vh; (100% do view heigth do body)
+
+-----------------------------------------------------------------------------------------------
+--> position: absolute; ele faz com que um item fique numa camada indepentte, por que, se faço um quadrado 
+numa folha de papel, quando mexo esse quadrado toda a folha mexe consequentemente,mas e se eu fizer esse quadrado 
+em uma outra folha, posso mexer esse quadrado sem movimentar a folha inferior ou superior, porque meu novo quadrado
+está numa posição absoluta (independente). Usamos ele para fazer a gota e por o tipo sanguineo dentro - classe blood com ::before,
+porem para limitar essa liberdade usamos o:
+
+--> position: relative; para que essa movimentação se limite a "caixa" classe blood, ou seja, vai ter uma movimentação 
+absoluta não mais sobre meu body, mas sim sobre a classe.  e ai posso usar align-items: center; justify-content: center;
+para ajudar no alinhamento.
