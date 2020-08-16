@@ -103,7 +103,7 @@ ocupando a altura e margin... então vamos deixar o heigth: 0; e margin-top: 0;
 
 ----------------------------------------------------------------------------------------
 
-server.js
+construindo o servidor com o express
 
 --> const express = require("express") aqui estou pedindo (require = pedindo) as propriedades do express para por na constante express
 --> const server = express() aqui estou fazendo a minha outra constante server receber as funçoes do express, 
@@ -118,3 +118,14 @@ e se tentar 127.0.0.1:3000 o resultado será Cannot GET / isso significa que ele
 --> nodemon vai nos ajudar a não ter que ficar reiniciando nossa aplicação manualmente, ele simplesmente vai ficar monitorando suas inclusões e
 a cada alteração na sua aplicação, o nodemon fará a reinicialização do servidor para você ao dar um start, ver no README como fazer isso.
 
+----------------------------------------------------------------------------------------
+-- configurando o servidor para receber o html e arquivos estáticos --
+
+--> const nunjucks = require("nunjucks") configuração para usar o nunjucks no arquivo server.js
+se eu escrever nunjucks. vai vir várias opções que vem dele, entao:
+--> nunjucks.configure("./", {express: server} ) fazendo isso estou dizendo que meu index esta na raiz e ele vai esperar um objeto, no qual é express: server, ou seja, aplique no meu express, o server 
+--> server.get("/", function(req, res){return res.render("index.html")}) estou alterando meu return para fazer funcionar/renderizar o meu html 
+--> npm start e veja como está sua página na web
+--> server.use(express.static('public')) essa é a configuração para apresentar arquivos extras - estáticos (css, imagens, js do front) que estarão na pasta public
+
+-------------------------------------------------------------------------------------------
