@@ -101,3 +101,20 @@ ocupando a altura e margin... então vamos deixar o heigth: 0; e margin-top: 0;
 
 --> transition: all 300ms; vai fazer uma transição de 300 milessegundos para suavizar a ida e volta do formulario.
 
+----------------------------------------------------------------------------------------
+
+server.js
+
+--> const express = require("express") aqui estou pedindo (require = pedindo) as propriedades do express para por na constante express
+--> const server = express() aqui estou fazendo a minha outra constante server receber as funçoes do express, 
+agora se eu escrever server. vai vir várias propriedades e funcionalidades...então:
+--> server.listen(3000) com este listen estou criando meu servidor, que espera que eu informe uma porta, na qual vamos por 3000.
+minha página estava funcionando com o live server que informava 127.0.0.1:5500, essa era meu servidor local.
+--> se no terminal eu der um start no meu servidor: node server.js e abrir na web 127.0.0.1:5500 não abre mais,
+e se tentar 127.0.0.1:3000 o resultado será Cannot GET / isso significa que ele acha o servidor, mas não acha nenhum arquivo apos a /
+--> Ctrl + C você para o servidor e node server.js você inicia de novo, a cada inclusão de info em seu servidor você faz essa reiniciação.
+--> server.get("/", function(req, res) { return res.send("oi") } essa função é para por algo apos a / a agora nossa página vai dar outro resultado,
+--> importante: server.listen(3000) sempre deve estar na ultima linha de código. 
+--> nodemon vai nos ajudar a não ter que ficar reiniciando nossa aplicação manualmente, ele simplesmente vai ficar monitorando suas inclusões e
+a cada alteração na sua aplicação, o nodemon fará a reinicialização do servidor para você ao dar um start, ver no README como fazer isso.
+
