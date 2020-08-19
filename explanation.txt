@@ -129,3 +129,29 @@ se eu escrever nunjucks. vai vir várias opções que vem dele, entao:
 --> server.use(express.static('public')) essa é a configuração para apresentar arquivos extras - estáticos (css, imagens, js do front) que estarão na pasta public
 
 -------------------------------------------------------------------------------------------
+ 
+-- Servidor versus lista de doadores --
+
+--> const donors será meu array de doadores, e que também será um objeto
+--> server.get("/", function(req, res){return res.render("index.html", { donors})}) recebe agora o meu objeto donors
+--> {% for donor in donors%} para abrir e {%endfor%} para fechar, usando essa estrutura no html porque não sabemos quantos doadores vamos ter.
+--> nunjucks.configure("./", {express: server, noCache: true}) Se eu não por o noCache: true meu Array não vai conseguir atualizar na tela os novos nomes.
+o Cache serve para não ficar repetindo consultas ou dados, coisas que ele acha que vai ficar demorando muito nas buscas, então ele guarda em algum lugar, mas agora 
+colocamos noCache para pegar da nossa fonte "html" e não mais da fonte "dele".
+
+---------------------------------------------------------------------------------------------------------
+
+-- Usando o Formulario para captar dados e adicionar em nosso objeto donors --
+
+--> o server.get esta nos servindo fazendo mostrar na tela os dados, mas agora queremos receber dados, então
+--> server.post("/", function(req, res){return req. }) metodo post para receber, mas precisamos dizer isso também para o html
+--> <form action="/" method="POST"> para ele entender que é para guardar dados, cada vez que eu clicar no botão, o formulário fará o post, procurando primeiro se 
+tenho ele no servidor, no caso temos.
+--> lembrando que o "res" dá a resposta e o "req" pega os dados
+--> const name = req.body.name , esta é um dos input do form. que estará dentro do server.post...
+--> donors.push({name: name,blood: blood,}) return res.redirect("/") será para que de fato os dados sejam adicionados na nosso lista de doadores.
+--> server.user(express.urlencoded ({extended: true})) isso é para habilitar o body no servidor quando usamos o formulário e 
+estamos solicitando ao urlencoded que extenda suas funções para nós.
+--> porém cada dados inserido, após reiniciar o servidor, perco os dados, então por isso vou fazer meu banco de dados.
+
+---------------------------------------------------------------------------------------------------------
