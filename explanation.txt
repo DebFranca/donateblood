@@ -93,7 +93,7 @@ vamos aproveitar para criar um evento para o botão "quero ajudar" usando o:
 função completa em scripts.js
 
 --> classList.toogle('hide') o toogle tem a função de adicionar ou remover a classe nomeada de 'hide', mas vou precisar 
-mencionar na folha css o quero que aconteça com essa classe e incluir o 'hide' na classe existe no html.
+mencionar na folha css o quero que aconteça com essa classe e incluir o 'hide' no html <section class="form hide">
 
 -->  opacity: 0; no css vai fazer as cores sumirem qdo clicarmos no botao, mas os itens ainda "existiram"
 -->  visibility: hidden; vai fazer os itens existentes fiquem escondidos, mas ainda provavelmente ainda estará
@@ -155,3 +155,35 @@ estamos solicitando ao urlencoded que extenda suas funções para nós.
 --> porém cada dados inserido, após reiniciar o servidor, perco os dados, então por isso vou fazer meu banco de dados.
 
 ---------------------------------------------------------------------------------------------------------
+
+-- CONECTANDO A APLICAÇÃO AO BANCO DE DADOS --
+
+--> const Pool = require ('pg').Pool  O Pool vai fazer minha conexão ficar ativa, ou seja, não vou mais precisar 
+conectar e desconectar e ficar enviando senha para o banco.
+--> const db = new Pool({user: 'postgres', password: '1234567', host: 'localhost', port:'5432', database: 'doeblood'}) 
+estou criando um novo objeto e colocando na constante db e com isso já tenho um conexão com o banco de dados e agora
+daqui pra frente posso usar só o objeto db
+
+--> const donors ...que é minha lista (array) de doadores posso tirar
+--> donors.push({name: name,blood: blood,}) posso tirar também, porque não vou mais por dentro do array e sim dentro do banco de dados.
+--> const query = `INSERT INTO donors ("name", "email", "blood") VALUES ($1,$2,$3)` Abrindo e fechando com crase.
+--> const values = [name,email,blood] o $1,$2... é nosso 2º parametro que dentro da função query vai ser substituido pelos nomes dos rótulos que criamos para a tabela.
+--> db.query(query, values, function(err)){ if (err) return res.send("erro no banco de dados.") return res.redirect("/")}  
+
+
+--> if (name == "" ||email == "" ||blood == ""){ return res.send ("todos os campos são obrigatórios")} 
+essa é nossa regra de négocio para impedir que o usuário tentar enviar dados nulos para o nosso formulário.
+
+--> server.get("/", function(req, res){const donors = [] return res.render("index.html", {donors})})
+como deletamos a lista de array donors, criamos uma const donors nessa função para não ter que deletar em cada lugar que havia esse objeto.
+
+ou posso deixar assim para fazer esses dados apareceram no front-end:
+server.get("/", function(req, res){ 
+    db.query("SELECT * FROM donors",function(err,result){
+
+        if (err) return res.send("erro no banco de dados")
+
+        const donors = result.rows
+        return res.render("index.html", {donors})
+    })
+})
