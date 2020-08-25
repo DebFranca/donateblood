@@ -1,42 +1,54 @@
-#Construction page web - Donate blood
 
-Uma aplicação que recebe dados de pessoas que desejam fazer doações de sangue, esses dados serão armazenados no banco de dados postgresql
+<h1 align="center">Construção da página web Doe Sangue 
+  <br><br>
+    <img src="./public/logo-doe.png" class="logo" alt="imagem de doe" height="100">
+  <br>
+</h1>
 
-![home-page-doe](https://github.com/DebFranca/donateblood/blob/master/git/doeblood.gif)
+<p align="center">Uma aplicação que recebe dados de pessoas que desejam fazer doações de sangue, esses dados serão armazenados no banco de dados postgresql</p>
+
+<br>
+
+<div align="center">
+  <img src="./github/doeblood.gif" alt="demo-web" height="425">
+</div>
 
 
-###Ambiente de Desenvolvimento
+
+<h2>Ambiente de Desenvolvimento</h2>
 
 - Visual Studio Code
 - Google chrome
 
+<br><br>
 
-##Front-End
+<h2><strong>Front-End<strong></h2>
 
 Front-End é o lado cliente da aplicação, fazendo sua comunicação com o servidor Back-End atraves do HTTP (Hypertext Transfer Protocol) e isso é feito atraves de URLs e com trocas de dados, então o Front-End é responsável por:
 - Solicitar dados para o servidor
 - Apresentação dos dados em tela
  
-###Tecnologias Usadas
+<h3>Tecnologias Usadas</h3>
 
 - HTML (estrutura)
 - CSS (estilo)
 - JavaScript (Inteligência)
 
-####Dicas para de uso do VScode - Extensão/Plugin
+<h4>Dicas para de uso do VScode - Extensão/Plugin</h4>
 
 - live server - para o navegador atualizar automaticamente a cada vez que salvar um novo "item". Seu start com alt+l o
 
 
-####Sites de Fontes:
+<h4>Sites de Fontes:</h4>
 
-Simbolos:
+<h5>Simbolos:</h5>
 - https://www.pontodefusao.com/simbolos/
 Letras
 - Google fonts ( Roboto - Regular 400 e Bold 700)
 
+<br><br>
 
-##Back-End
+<h2><strong>Back-End<strong></h2>
 
 
 Back-End é o servidor, onde ficará hospedado os nossos arquivos, e vamos disponibilizar estes arquivos quando o Front-End pedir.
@@ -47,14 +59,14 @@ Eu estava usando o Live Server (plugin), porém agora vou construir o meu propri
 - Tratar os dados e colocar em um banco de dados para ficar mais seguro.
 - Receber pedidos do cliente
 
-###Tecnologias Usadas
+<h3>Tecnologias Usadas</h3>
 
 - Node.js (JavaScript)
 - PostgreSQL
 
 Obs.: Node.Js é um Interpretador JavaScript, sem ele as funcionalidades em js não funcionam.
 
-######building server with express 
+<h4>servidor de construção com expresso</h4>
 npm é um gerenciador de pacotes para dar inicio a minha própria aplicação criando na minha pasta um package.json que será a configuração da minha aplicação. 
 
 npm init -y 
@@ -80,13 +92,14 @@ POR:
     "start": "nodemon server.js"
   },
 
-######configurando o servidor para receber o html e arquivos estáticos
+<h4>configurando o servidor para receber o html e arquivos estáticos</h4>
 
 Para isso vou usar o nunjucks, que é uma ferramenta que nos permite usar o nosso index.html e ele nos permite por no html variáveis e funcionalidades, em outras palavras o nunjucks é uma template engine e será a nossa terceira dependência. Mais comentários no arquivo explanation.txt que está na ordem de inserção de códigos.
 
 npm install nunjucks
 
-######Banco de Dados
+<br>
+<h3><strong>Banco de Dados<strong></h3>
 
 - Para que os dados não fique na aplicação
 - Evitar perda e evitar que os dados se corrompa
@@ -96,7 +109,7 @@ npm install nunjucks
 A linguagem que nos permite conversar com nosso banco de dados é a SQL,
 Structured Query Language (Linguagem de Consulta Estruturada), lembrando que não é uma linguagem de programação, mas uma linguagem para criar as tabelas, buscar os dados nas tabelas, atualizar ou apagar.
 
-######POSTGRES
+<h3>POSTGRES</h3>
 
 O sistema que vou usar para trabalhar com o SQL, é Postgres, Sistema Gerenciador de Banco de Dados Relacional (SGBDR), ele é OPEN SOURCE e é gratuito
 
@@ -131,7 +144,7 @@ Agora clique no rótulo Struture e na sua esquerda na parte inferior tem um pequ
 Table name: donors
 create table.
 
-######Criando as colunas da tabela:
+<h4>Criando as colunas da tabela:</h4>
 Add Column
 
 Name: name
@@ -174,7 +187,7 @@ FROM "donors";
 
 e assim po diante...
 
-######Conectando a aplicação ao banco de dados
+<h4>Conectando a aplicação ao banco de dados</h4>
 
 1º Conectar nossa aplicação ao banco de dados:
 
@@ -185,4 +198,5 @@ obs.: o "pg" é o responsável por fazer a conexão com o banco de dados.
 mais detalhes em explanation.txt
 
 
-Thanks to Maik Brito - Rocketseat
+<h3><strong>Thanks to Maik Brito - Rocketseat<strong></h3>
+
