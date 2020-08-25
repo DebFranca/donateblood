@@ -1,6 +1,8 @@
-#Application construction page web
+#Construction page web - Donate blood
 
 Uma aplicação que recebe dados de pessoas que desejam fazer doações de sangue, esses dados serão armazenados no banco de dados postgresql
+
+![home-page-doe](https://github.com/DebFranca/donateblood/blob/master/git/doeblood.gif)
 
 
 ###Ambiente de Desenvolvimento
@@ -181,3 +183,6 @@ npm install pg
 obs.: o "pg" é o responsável por fazer a conexão com o banco de dados.
 
 mais detalhes em explanation.txt
+
+
+Thanks to Maik Brito - Rocketseat
